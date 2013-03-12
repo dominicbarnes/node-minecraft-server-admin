@@ -1,0 +1,39 @@
+{
+  "name": "minecraft-server-admin",
+  "version": "0.0.0",
+  "description": "API for managing a minecraft server instance",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": "",
+  "keywords": [
+    "minecraft",
+    "server",
+    "admin",
+    "administration",
+    "backups",
+    "config"
+  ],
+  "author": "Dominic Barnes <dominic@dbarnes.info>",
+  "license": "MIT",
+  "dependencies": {
+    "nbt": "~0.1.0",
+    "minecraft-runner": "0.0.1",
+    "async": "~0.1.22",
+    "wrench": "~1.4.4",
+    "lodash": "~1.0.0",
+    "file-class": "~0.1.0",
+    "glob": "~3.1.14",
+    "mkdirp": "~0.3.4",
+    "minecraft-server-properties": "0.0.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.8.1",
+    "request": "~2.12.0",
+    "expect.js": "~0.2.0"
+  }
+}

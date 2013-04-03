@@ -266,4 +266,26 @@ describe("Server", function () {
             });
         });
     });
+
+    describe("#status", function () {
+        after(function (done) {
+            this.timeout("10s");
+            server.stop(done);
+        });
+
+        it("should return 'Stopped' when no game is running", function () {
+            expect(server.status).to.equal("Stopped");
+        });
+
+        it("should return whatever the game's status is when running", function (done) {
+            this.timeout("10s");
+
+            server.start(function (err) {
+                if (err) return done(err);
+
+                expect(server.status).to.equal("Running");
+                done();
+            });
+        });
+    });
 });

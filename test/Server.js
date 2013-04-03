@@ -127,7 +127,7 @@ describe("Server", function () {
     });
 
     describe("#start()", function () {
-        this.timeout("10s");
+        this.timeout("15s");
 
         afterEach(function (done) {
             server.stop(done);
@@ -165,7 +165,7 @@ describe("Server", function () {
     });
 
     describe("#stop()", function () {
-        this.timeout("10s");
+        this.timeout("15s");
 
         beforeEach(function (done) {
             server.start(done);
@@ -269,7 +269,7 @@ describe("Server", function () {
 
     describe("#status", function () {
         after(function (done) {
-            this.timeout("10s");
+            this.timeout("15s");
             server.stop(done);
         });
 

@@ -1,6 +1,6 @@
 {
   "name": "minecraft-server-admin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "API for managing a minecraft server instance",
   "main": "index.js",
   "directories": {
@@ -25,7 +25,7 @@
     "async": "~0.1.22",
     "wrench": "~1.4.4",
     "lodash": "~1.0.0",
-    "file-class": "~0.1.1",
+    "file-class": "~0.1.2",
     "glob": "~3.1.14",
     "mkdirp": "~0.3.4",
     "minecraft-server-properties": "~0.0.0",

@@ -39,7 +39,7 @@ describe("Server", function () {
             expect(server).to.have.property("dir", path.join(support, "server"));
 
             expect(server.properties).to.be.a(File);
-            expect(server.config).to.be.a(File.JSONFile);
+            expect(server.settings).to.be.a(File.JSONFile);
             expect(server.whitelist).to.be.a(File.ListFile);
             expect(server.operators).to.be.a(File.ListFile);
             expect(server.banned.ips).to.be.a(File.ListFile);
@@ -60,7 +60,7 @@ describe("Server", function () {
         it("should create some files and directories", function (done) {
             async.every([
                 "backups/",
-                "config.json",
+                "craftmin.json",
                 "server/server.properties",
                 "server/white-list.txt",
                 "server/ops.txt",

@@ -1,6 +1,6 @@
 {
   "name": "minecraft-server-admin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "API for managing a minecraft server instance",
   "main": "index.js",
   "directories": {

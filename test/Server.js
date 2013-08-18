@@ -39,7 +39,7 @@ describe("Server", function () {
             expect(server).to.have.property("dir", path.join(support, "server"));
 
             expect(server.properties).to.be.a(File);
-            expect(server.settings).to.be.a(File.JSONFile);
+            expect(server.config).to.be.a(File.JSONFile);
             expect(server.whitelist).to.be.a(File.ListFile);
             expect(server.operators).to.be.a(File.ListFile);
             expect(server.banned.ips).to.be.a(File.ListFile);

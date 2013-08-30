@@ -158,7 +158,7 @@ describe("Server", function () {
                     expect(err).to.be.ok();
                     expect(server).to.not.have.property("game");
 
-                    server.setJar(jar, done);
+                    server.linkJar(jar, done);
                 });
             });
         });

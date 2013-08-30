@@ -189,14 +189,25 @@ slate without needing to reconfigure the entire server.
  * `callback` - Arguments provided:
     * `err` - Error object (if relevent)
 
-### Server#setJar(location, callback)
+### Server#linkJar(location, callback)
 
-This method sets the `server/minecraft_server.jar` symbolic link with the `location`
-specified.
+This method creates a symbolic link at `server/minecraft_server.jar` pointing
+to the `location` specified.
 
 **Arguments**
 
  * `location` - The absolute path to a valid `minecraft_server.jar` file
+ * `callback` - Arguments provided:
+    * `err` - Error object (if relevent)
+
+### Server#downloadJar(url, callback)
+
+This method downloads the file located at the specified `url` via HTTP
+to `server/minecraft_server.jar`.
+
+**Arguments**
+
+ * `url` - The url pointing to a valid `minecraft_server.jar`
  * `callback` - Arguments provided:
     * `err` - Error object (if relevent)
 

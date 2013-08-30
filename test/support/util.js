@@ -2,8 +2,9 @@ var fs      = require("fs"),
     path    = require("path"),
     async   = require("async"),
     mkdirp  = require("mkdirp"),
-    request = require("request"),
-    url     = "https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar";
+    request = require("request");
+
+exports.url = "https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar";
 
 exports.downloadJar = function (dest, callback) {
     async.waterfall([
@@ -22,7 +23,7 @@ exports.downloadJar = function (dest, callback) {
         function (exists, done) {
             if (exists) return process.nextTick(done);
 
-            var req = request(url);
+            var req = request(exports.url);
             req.pipe(fs.createWriteStream(dest));
             req.on("end", done);
         }

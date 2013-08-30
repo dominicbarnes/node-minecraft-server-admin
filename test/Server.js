@@ -144,7 +144,6 @@ describe("Server", function () {
 
         it("should run the callback in the context of the server object", function (done) {
             server.start(function () {
-
                 expect(this).to.equal(server);
                 done();
             });
@@ -284,6 +283,66 @@ describe("Server", function () {
                 if (err) return done(err);
 
                 expect(server.status).to.equal("Running");
+                done();
+            });
+        });
+    });
+
+    describe("#linkJar()", function () {
+        before(function (done) {
+            fs.unlink(server.jar, function () {
+                done();
+            });
+        });
+
+        beforeEach(function (done) {
+            server.linkJar(jar, done);
+        });
+
+        afterEach(function (done) {
+            fs.unlink(server.jar, done);
+        });
+
+        it("should create a symbolic link", function (done) {
+            fs.lstat(server.jar, function (err, stat) {
+                if (err) return done(err);
+
+                expect(stat.isSymbolicLink()).to.be(true);
+                done();
+            });
+        });
+
+        it("should point that symbolic link to the downloaded jar", function (done) {
+            fs.stat(server.jar, function (err, stat) {
+                if (err) return done(err);
+
+                expect(stat.isFile()).to.be(true);
+                done();
+            });
+        });
+    });
+
+    describe("#downloadJar()", function () {
+        before(function (done) {
+            fs.unlink(server.jar, function () {
+                done();
+            });
+        });
+
+        beforeEach(function (done) {
+            this.timeout("5s");
+            server.downloadJar(util.url, done);
+        });
+
+        afterEach(function (done) {
+            fs.unlink(server.jar, done);
+        });
+
+        it("should download a new file to server/minecraft_server.jar", function (done) {
+            fs.stat(server.jar, function (err, stat) {
+                if (err) return done(err);
+
+                expect(stat.isFile()).to.be(true);
                 done();
             });
         });

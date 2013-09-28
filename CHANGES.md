@@ -1,6 +1,10 @@
 Version History
 ===============
 
+## 0.2.0 (September 28, 2013)
+ * Added `Server#hasJar()` (b0e891710037f1580945e4dc5128ee4f1960a835)
+ * Added `Server#running` (b4e0bf913b8f5d8af5c0485df695cb316f92e1f5)
+
 ## 0.1.0 (August 30, 2013)
  * Added `Server#downloadJar()` (10ed7b2c04b6a53400b9ede299465cf38602b88f)
  * Renamed `Server#setJar()` as `Server#linkJar()` (10ed7b2c04b6a53400b9ede299465cf38602b88f)
